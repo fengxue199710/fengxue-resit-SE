@@ -1,6 +1,7 @@
 ArrayList<Sprite> Pumpkins = new ArrayList<Sprite>();
 ArrayList<Sprite> bosses = new ArrayList<Sprite>();
 ArrayList<Sprite> Orbs = new ArrayList<Sprite>();
+ArrayList<Sprite> Stones = new ArrayList<Sprite>();
 ArrayList<Sprite> Enemies = new ArrayList<Sprite>();
 Sprite End;
 class gameworld{
@@ -99,6 +100,7 @@ class gameworld{
     ladders = new  ArrayList<Sprite>();
     Doughnuts = new  ArrayList<Sprite>();
     Orbs = new ArrayList<Sprite>();
+    Stones = new ArrayList<Sprite>();
     Enemies = new ArrayList<Sprite>();
     isReady = false;
     this.createMap();
@@ -407,6 +409,11 @@ class gameworld{
               createOrb(col, row);
               break;
           }
+          case "s": {
+              createStone(col, row);
+              break;
+          }
+          
           case "w": {
               CreateWhitch(col, row);
               break;
@@ -474,6 +481,12 @@ class gameworld{
     Orb orb = new Orb(loadImage("./data/PowerUpOrb/powerOrb1.png"), SPRITE_SIZE_X, SPRITE_SIZE_Y, WALL_SIZE_X / 2 + col * WALL_SIZE_X, WALL_SIZE_Y / 2 + row * WALL_SIZE_Y);  
     Orbs.add(orb); 
   }
+  
+  void createStone(int col, int row) {
+    Stone stone = new Stone(loadImage("./data/Stone/Stone1.png"),SPRITE_SIZE_X, SPRITE_SIZE_Y, WALL_SIZE_X / 2 + col * WALL_SIZE_X, WALL_SIZE_Y / 2 + row * WALL_SIZE_Y);
+    Stones.add(stone);  // 确保你有一个存储 Stone 的 ArrayList
+}
+
   
   void createBoss(int col, int row, String bossNum){
     if (bossNum == "b1"){

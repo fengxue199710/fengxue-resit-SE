@@ -176,6 +176,7 @@ void displayAll(){
     displaypk();
     displayheart();
     displayOrb();
+    displayStone();
     displayEnemy();
     End.display();
 }
