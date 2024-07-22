@@ -22,7 +22,7 @@ void drawIntroWindow() {
   
   pushMatrix();
   int introWindowWidth = 700;
-  int introWindowHeight = 300;
+  int introWindowHeight = 350;
   int introWindowX = width/2 - introWindowWidth/2;
   int introWindowY = height/2 - introWindowHeight/2 - 50;
   
@@ -57,6 +57,8 @@ void drawIntroWindow() {
   text("Collect the pumkins to gain points !", moveInstructionX, moveInstructionY + 160);
   image(loadImage("./data/redsmile/attack2.png"), moveInstructionX - 250, moveInstructionY + 235, imageWidth, imageHeight);
   text("Avoid enemies or lose a life !", moveInstructionX, moveInstructionY + 235);
+  image(loadImage("./data/Stone/Stone2.png"), moveInstructionX - 250, moveInstructionY + 290, imageWidth, imageHeight);
+  text("Teleport and teleportback or only teleport", moveInstructionX, moveInstructionY + 290);
     
   //textAlign(CENTER, CENTER);
   //text("Game Introduction:\n\nThis is a simple game. Play and have fun!", introWindowX, introWindowY, introWindowWidth, introWindowHeight);
