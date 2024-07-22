@@ -203,6 +203,8 @@ void collideAll(){
     ReinforceJump(jump_ms_start);
   }
   OrbCollisions(player, Orbs);
+  // 处理玩家与石头的互动
+    stoneCollisions(player, Stones);
   if(collisionTest(player, End)){
     gameOver = true;
     score += (difficulty.equalsIgnoreCase("easy")) ? 5 : 7;

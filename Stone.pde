@@ -11,6 +11,7 @@ public class Stone extends AnimatedSprite {
             moveToNextImg();
         }
     }
+}
 void displayStone(){
   for(Sprite s: Stones){
      AnimatedSprite stone = (AnimatedSprite)s;
@@ -23,18 +24,14 @@ void stoneCollisions(Sprite player, ArrayList<Sprite> stones) {
     ArrayList<Sprite> collisionList = checkCollisionList(player, stones);
     if (collisionList.size() > 0) {
         for (Sprite s : collisionList) {
-           // teleportPlayer(player, new PVector(500, 200));  // 假设传送到的坐标是 (500, 200)
-          //  startTeleportBackTimer(player, 5000);  // 5秒后返回
+            teleportPlayer(player, new PVector(500, 200));  // 假设传送到的坐标是 (500, 200)
+            startTeleportBackTimer(player, 5000);  // 5秒后返回
             stones.remove(s);
         }
     }
 }
-/*
-void teleportPlayer(Sprite player, PVector newPosition) {
-    player.originalPosition = new PVector(player.getCenter_x(), player.getCenter_y()); // 保存原始位置
-    player.setCenter_x(newPosition.x);
-    player.setCenter_y(newPosition.y);
-}
+
+
 
 void startTeleportBackTimer(Sprite player, int delay) {
     new java.util.Timer().schedule(
@@ -48,11 +45,26 @@ void startTeleportBackTimer(Sprite player, int delay) {
     );
 }
 
+void teleportPlayer(Sprite player, PVector newPosition) {
+    if (player instanceof Player) {
+        Player p = (Player) player;
+        p.originalPosition = new PVector(p.getCenter_x(), p.getCenter_y()); // 保存原始位置
+        p.setCenter_x(newPosition.x);
+        p.setCenter_y(newPosition.y);
+    }
+}
+
 void teleportPlayerBack(Sprite player) {
-    player.setCenter_x(player.originalPosition.x);
-    player.setCenter_y(player.originalPosition.y);
+    if (player instanceof Player) {
+        Player p = (Player) player;
+        if (p.originalPosition != null) {
+            p.setCenter_x(p.originalPosition.x);
+            p.setCenter_y(p.originalPosition.y);
+        }
+    }
 }
-*/
-}
+
+
+
 
    
