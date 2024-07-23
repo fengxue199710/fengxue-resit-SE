@@ -2,14 +2,8 @@
  <img src="https://github.com/UoB-COMSM0110/2024-group-12/assets/104866923/8bb8b7e9-b76a-4005-a784-5067c5234a8d" alt="Halloween" style="width:100%;">
 </p>
 
-<p align="center">
-  <a href="https://youtu.be/q2mqtx54D-A">Click Here to Watch A Demo Video</a>
-</p>
-
 
 ## Table of Contents
-- [Team](#team)
-- [How to Donwload and Play](#how-to-download--halloween-adventure)
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Design](#design)
@@ -18,74 +12,14 @@
 - [Process](#process)
 - [Conclusion](#conclusion)
 - [Individual Contribution Table](#individual-contribution-table)
-
-# Team
-
-<figure>
-  <img src="https://github.com/UoB-COMSM0110/2024-group-12/assets/153836423/9738be08-5bbc-4ed8-9dd3-4c4d29ff4089" alt="Team_photo" style="width:100%">
-</figure>
-
-<table align="center">
-  <thead>
-    <tr>
-      <th style="text-align:center">Name</th>
-      <th style="text-align:center">Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:center">Hamza Ahmed</td>
-      <td style="text-align:center"><a href="mailto:io23632@bristol.ac.uk">io23632@bristol.ac.uk</a></td>
-    </tr>
-    <tr>
-      <td style="text-align:center">Yiran Liu</td>
-      <td style="text-align:center"><a href="mailto:fm19201@bristol.ac.uk">fm19201@bristol.ac.uk</a></td>
-    </tr>
-    <tr>
-      <td style="text-align:center">Gunho Ryu</td>
-      <td style="text-align:center"><a href="mailto:jm23986@bristol.ac.uk">jm23986@bristol.ac.uk</a></td>
-    </tr>
-    <tr>
-      <td style="text-align:center">Xiaoqian Lu</td>
-      <td style="text-align:center"><a href="mailto:fd23007@bristol.ac.uk">fd23007@bristol.ac.uk</a></td>
-    </tr>
-    <tr>
-      <td style="text-align:center">Feng Xue</td>
-      <td style="text-align:center"><a href="mailto:zp23769@bristol.ac.uk">zp23769@bristol.ac.uk</a></td>
-    </tr>
-  </tbody>
-</table>
-
-# How to download  Halloween Adventure 
+- 
 
 
-**requirements:**
-MAC OS / WINDOWS, **Halloween adventure will not work on linux machines**
-Processing, which can be downlaoded here: 
-https://processing.org/download
-
-1. **Donwload the zipped folder of this repo**
-
-<img width="1028" alt="DownloadGame-ZipFolder" src="https://github.com/UoB-COMSM0110/2024-group-12/assets/153836423/f7110e88-cb41-416c-82ca-c3becda346b6">
-
-2. **Open Processing from your Mac OS or windows computer**
-
-3. **Click on File - > Open**
-   
-<img width="1439" alt="DownloadGame-FileOpenProcessing" src="https://github.com/UoB-COMSM0110/2024-group-12/assets/153836423/45a4836d-6e4a-4eb6-a4a8-9e9ab25420dd">
-
-4. **Select the "Game.pde" File**
-
-<img width="1440" alt="DownloadGame-OpenGamepde" src="https://github.com/UoB-COMSM0110/2024-group-12/assets/153836423/ea32b19f-c8a1-4c71-8b1f-ca5bd76148ff">
-
-5.**Once the file is open, click on the Play Button on the bottom Left corner of Processing**
-
-<img width="383" alt="DownloadGame-PressPlay" src="https://github.com/UoB-COMSM0110/2024-group-12/assets/153836423/d018b586-8b28-42f0-b75e-60b98b41f4b6">
 
 
-6. **HAVE FUN**
-
-# Introduction
+# Introduction 
+Introduction (5%  ~200 words)
+Describe what makes the new level in your game novel.
 
 Our game is a 2D platform game which, like other similar 2D platforms, allows for a character to jump through obstacles, avoiding enemies and collecting points. 
 
@@ -168,6 +102,9 @@ Along the way, collect pumpkins scattered throughout the levels. Pumpkins are es
 Look out for special power-ups hidden throughout the levels. They might enhance advanturer jumping abilities, allowing him to overcome obstacles and enemies with ease.
 
 # Requirements
+Requirements (15% ~300 words)
+List three new user stories associated with the new level. Explain why you decided to develop the new level.
+
 
  **ideation, Use-cases and User Stories**
 
@@ -247,6 +184,9 @@ The interaction of the stake holders with this game is designed to be identical 
 <br>
 
 # Design
+Design (15% ~350 words)
+Explain what has changed in the system architecture, as a result of developing the new level. Show the changes in the class diagrams and behavioural diagrams.
+
 
 **System Architecture**
 
@@ -273,6 +213,10 @@ To have a common static view of the game, our group devised a class diagram wher
 
 
 # Implementation
+
+Implementation (15% ~350 words)
+Describe implementation of the new level in your game, in particular highlighting  two areas of challengein developing this new level in your game.
+
   
   Our game features an intricate system centered around the creation of "AnimatedSprite," a class housing the base character animations responsible for loading and executing various actions. Built upon this foundation, we implement the attributes of the player character, enhancing their functionality atop the AnimatedSprite framework. The core logic governing the behavior of boss characters takes precedence in our game, encompassing elements such as damage calculation, pursuit tactics, movement speed, and engagement range. Notably, classes like "PumpkinMonster," "RedSmile," and "RedSprite" derive from the original Boss class, loading distinct actions to diversify gameplay.
 
@@ -360,6 +304,11 @@ To address this issue effectively, we implemented a transparent pixel cropping t
 
 # Evaluation
 
+Evaluation (15% ~300 words)
+One qualitative or one quantitative evaluation of your choice.
+A description of how the new code was tested.
+
+
  Evaluation is fundamental in software development as it enables developers to analyse and refine the software to meet users’ requirements effectively. To ensure that our project meets users’ requirements, our group implemented two evaluation measures: qualitative and quantitative evaluations. Any issues identified from these evaluations, if applicable, were addressed and some evaluations were run multiple times to better evaluate the project.
 
  Our game’s main objective could be summarised as below:
@@ -431,6 +380,13 @@ To address this issue effectively, we implemented a transparent pixel cropping t
 <br>
 
 # Process
+
+Process (15% ~200 words)
+Reflect on your work process, in particular:
+ explaining what tools you used and their strengths and limitations
+how different it would have been working in a team rather than working on your own? 
+how you could have improved your performance in the previous team work. 
+
 
 ## Introduction
 
@@ -505,6 +461,12 @@ During Easter, we held sprint days, refining features and incorporating feedback
 We decided against a detailed narrative, opting instead to enhance the gameplay and visual elements. Unimplemented ideas included gameplay mechanics like collecting donuts for extra lives and transforming the ghost into a human.
 
 # Conclusion
+Conclusion (10% ~200 words)
+Describe what lessons you have learnt about software engineering by completing this individual work? 
+Reflect on the challenges you faced in completing this work. 
+Describe how you could develop the software further in the future.
+
+
 In conclusion, our journey in developing this 2D platform game has been a testament to the power of collaboration, iteration, and user-centric design. Through the Agile methodology, we navigated various challenges, from refining our initial concept to addressing technical hurdles and user feedback. Our commitment to regular communication, role clarity, and task prioritization helped us stay on track despite the complexities of game development.
 
 As we progressed, user feedback played a pivotal role in shaping our game's direction. Whether it was tweaking mechanics for smoother gameplay or refining visual elements for better immersion, every iteration brought us closer to our goal of creating a compelling gaming experience.
