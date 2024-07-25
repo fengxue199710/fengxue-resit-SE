@@ -11,14 +11,12 @@
 - [Evaluation](#evaluation)
 - [Process](#process)
 - [Conclusion](#conclusion)
-- [Individual Contribution Table](#individual-contribution-table)
-- 
+
 # Introduction 
 Introduction (5%  ~200 words)
 Describe what makes the new level in your game novel.
 
-The previous game is a 2D platform game which, like other similar 2D platforms, allows for a character to jump through obstacles, avoiding enemies and collecting points. 
-I added a new feature based on the previous game: the teleport stone. When the player touches the teleport stone, they will be teleported to the specified location for a period of time and then teleported back to the starting point, or they will be teleported to the specified location but not teleported back. The specific function of the teleport stone depends on whether it is the first time or the second time to touch the stone. The first time to touch the stone, the player will be teleported to the specified location for a period of time and then teleported back to the starting point, while the second time to touch the stone, the player will be teleported to the specified location but will not be teleported back
+The previous game was a 2D platformer with two levels, easy and hard. Like other similar 2D platformers, it allowed the character to jump through obstacles, avoid enemies and collect points. I added a medium difficulty map based on the previous game and added a new feature: the teleport stone. When the player touches the teleport stone, they will be teleported to a specified location for a period of time before being teleported back to the starting point, or they will be teleported to a specified location but not teleported back. The specific function of the teleport stone depends on whether it is the first or second time the teleport stone is touched. The first time the teleport stone is touched, the player will be teleported to a specified location for a period of time before being teleported back to the starting point. The second time the teleport stone is touched, the player will be teleported to a specified location but will not teleport back. By introducing medium difficulty, players have the opportunity to practice and improve their skills before entering more difficult levels. The teleport stone in this level adds a new mechanic that players need to master to achieve a smooth transition from easy levels to difficult levels. With the teleport stone, players can enjoy a more interesting and varied game.
 这里准备加演示功能的视频2个
 
 
@@ -44,35 +42,54 @@ I added a new feature based on the previous game: the teleport stone. When the p
 Requirements (15% ~300 words)
 List three new user stories associated with the new level. Explain why you decided to develop the new level.
 
-
- **ideation, Use-cases and User Stories**
-
-
-
-**Identifying the stakeholders**
-
-
-
 **User Case Story**
 
-- Control the player / character via intuitive controls
-- Have clear objectives and goals that the user must achieve when playing the game, i.e. a clear incentive
-- Have special power ups and milestones
+- Player Navigation Using Teleport Stones
+- Strategic Gameplay Using Teleport Stones
+- Progressive Difficulty in Medium Difficulty
+
 
 **User Story**
+<br>
+>As a player,  
+>I want to use Teleport Stones to quickly navigate to different areas of the mid-level map,  
+>so that I can explore new areas more efficiently and collect stashes or power-ups.<br>Rationale: This user story highlights the need for better navigation in the >game, making it more engaging by allowing players to explore new areas faster and more >efficiently. The Teleport Stone feature adds a strategic element to the game, >making exploration more rewarding and exciting.
+<br>
 
-> m
+>As a player,  
+>I want Teleport Stones to provide temporary repositioning to avoid powerful enemies or obstacles,  
+>so that I can plan my moves better and have a higher chance of surviving challenging sections.<br>Rationale: This user story highlights the tactical use of Teleport >Stones to avoid difficult sections in the game. With temporary repositioning, players can bypass >powerful enemies or obstacles, adding a layer of strategy to the >gameplay. This makes the mid-level more interesting and challenging.
+
+<br>
+
+>As a player,  
+>I would like the difficulty of Medium Difficulty to increase gradually with the introduction of Teleport Stones,  
+>so that I can improve my skills and prepare for the harder levels.<br>Rationale: This user story addresses the need for a balanced progression in the game's >difficulty. By introducing Medium Difficulty, players have a chance to practice and improve their skills before moving on to the harder levels. The Teleport Stone in >this level adds a new mechanic that players need to master, providing a smooth transition from easy to hard levels.
+
 
 <br>
 <br>
 
-| Use Case Section | Easy Mode | Hard Mode | 
-| ------------- | ------------- | ------------- |
-| Description  | A run through the game with fewer enemies and more power up placements | A run through of the game with more enemies and fewer special power upgrades |
-
-
+**Reasons for Developing a New Level**
 <br>
 <br>
+There are several motivations for developing a Medium Difficulty level with a Teleport Stone:
+
+- Balanced Difficulty Progression: <br>
+Introducing Medium Difficulty provides players with a smoother difficulty curve, allowing them to gradually build their skills and adapt to new game mechanics before facing more challenging levels.
+
+- Increase Gameplay Variety: <br>
+Teleport Stones add a unique feature that differentiates Medium Difficulty from Easy and Hard levels. This variety keeps the gameplay fresh and engaging, preventing it from becoming monotonous.
+
+- Increase Engagement and Replayability: <br>
+By adding new elements like Teleport Stones, players are encouraged to try different strategies and explore the game world more thoroughly. This not only increases player engagement, but also improves the replayability of the game as players come back to uncover all the secrets and refine their gameplay.
+
+- Strategic Depth: <br>
+The Teleport Stone introduces a strategic element to the game, requiring players to carefully consider when and where to use it. This depth enhances the overall game experience and makes it more rewarding for players who enjoy tactical games.
+ <br>
+In summary, mid-level levels with Teleport Stones were developed to create a more balanced, engaging, and strategic game experience that encourages players to explore, strategize, and improve their skills.
+
+
 
 # Design
 Design (15% ~350 words)
@@ -82,10 +99,7 @@ Explain what has changed in the system architecture, as a result of developing t
 **System Architecture**
 
 
-
 **CLASS DIAGRAM**
-
-
 
 - <b>Game Class</b>: Game Class corresponds to the above-mentioned Game Manager in which it oversees overall flow of the game. It has access to all the classes and variables relevant to the game then renders appropriate screen in accordance to the user actions. 
 
@@ -99,34 +113,8 @@ Describe implementation of the new level in your game, in particular highlightin
   
 
 ### Challenge 1
-
-
-   
-
-
 ### Solution 1
 
-
-
-
-### Challenge 2
- 
-
-
- ### Solution 2
-  
-
-
- ### Challenge 3
-
-
-
-
- ### Solution 3
-
-
-
- 
 
 
 # Evaluation
@@ -175,61 +163,18 @@ A description of how the new code was tested.
 
 Process (15% ~200 words)
 Reflect on your work process, in particular:
- explaining what tools you used and their strengths and limitations
+explaining what tools you used and their strengths and limitations
 how different it would have been working in a team rather than working on your own? 
 how you could have improved your performance in the previous team work. 
 
-
 ## Introduction
-
-
-
-## Inception
-
-In our initial team meeting, attended by Hamza, GunHo, Yiran, Feng, and Lu, we brainstormed potential game concepts, prioritising personal passion over feasibility. We subsequently narrowed our focus to 2D platformers, dismissing more complex ideas like 3D and online multiplayer games due to time constraints.
 
 **Challenges** during this phase**:**
 
 - Varied coding skills and GitHub familiarity among team members.
-- Role assignment.
 
 **Solutions:**
 
-- Each member developed and presented a simple game in Processing, enhancing our understanding of individual coding skills and fostering team cohesion through **pair programming** and feedback.
-- We conducted a GitHub tutorial. For example, one of the team members (GunHo) had significantly more GitHub experience than the rest of the team. So we had all team members (Hamza, GunHo, and Yiran present) go through a tutorial on branching, merging, and rebasing. We did this by ‘practice’ codes that we pushed onto git, where each member practised creating their branch, merging code and resolving conflicts.
-
- **Organisation and Communication**
-
-
-**Challenges:**
-
-- 
-
-**Solution:**
-
-- 
-
-
-
-## **Game Development**
-
-
-- **Strengths:** Appealing design and intuitive gameplay.
-- **Areas for improvement:** Leaderboard integration, flying mechanics, map design, and respawn features.
-
-**Challenges:**
-
-- 
-- 
-
-**Solution:**
-
-
-**Challenges:**
-
-- 
-
-**Solution:**
 
 
 # Conclusion
