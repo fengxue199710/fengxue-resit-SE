@@ -11,6 +11,7 @@ int introButtonX, introButtonY; // Coordinates for the intro button
 int startGameButtonX, startGameButtonY; // Coordinates for the start game button
 int restartButtonX, restartButtonY;
 int easyButtonX, easyButtonY; // Coordinates for the easy button
+int mediumButtonX, mediumButtonY; // Coordinates for the medium button
 int hardButtonX, hardButtonY; // Coordinates for the hard button
 int leaderboardButtonX, leaderboardButtonY; // Coordinates for the leaderboard button
 ArrayList<LeaderboardEntry> leaderboard = new ArrayList<LeaderboardEntry>(); // Leaderboard list
@@ -82,9 +83,11 @@ void drawPage(){
     introButtonY = height/2 + buttonHeight;
     startGameButtonX = width/2 - buttonWidth/2;
     startGameButtonY = height/2 + buttonHeight + 100;
-    easyButtonX = width/2 - buttonWidth - 50;
+    easyButtonX = width/2 - buttonWidth - 150;
     easyButtonY = height/2 + buttonHeight + 100;
-    hardButtonX = width/2 + 50;
+    mediumButtonX = width/2 - buttonWidth +75;
+    mediumButtonY = height/2 + buttonHeight + 100;
+    hardButtonX = width/2 + 150;
     hardButtonY = height/2 + buttonHeight + 100;
     // Draw the start button
     fill(28, 82, 97);
@@ -162,6 +165,13 @@ void mouseClicked() {
     }
     if(mouseX >= easyButtonX && mouseX <= easyButtonX + buttonWidth && mouseY >= easyButtonY && mouseY <= easyButtonY + buttonHeight) {
       difficulty = "Easy";
+      if (back){
+        gw.restart();
+      }
+    }
+
+if(mouseX >= mediumButtonX && mouseX <= mediumButtonX + buttonWidth && mouseY >= mediumButtonY && mouseY <= mediumButtonY + buttonHeight) {
+      difficulty = "Medium";
       if (back){
         gw.restart();
       }
@@ -253,6 +263,18 @@ void draw_diff(){
     textSize(20);
     textAlign(CENTER, CENTER);
     text("Hard", hardButtonX, hardButtonY, buttonWidth, buttonHeight);
+    
+    if (difficulty.equals("Medium")) {
+      fill(255, 0, 0); // Red color for Medium button
+    } else {
+      fill(200); // Default color for Medium button
+    }
+    rect(mediumButtonX, mediumButtonY, buttonWidth, buttonHeight);
+    fill(0);
+    textSize(20);
+    textAlign(CENTER, CENTER);
+    text("Medium", mediumButtonX, mediumButtonY, buttonWidth, buttonHeight);
+    
 }
 
 void LeaderBoard(){

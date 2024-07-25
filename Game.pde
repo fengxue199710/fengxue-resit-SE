@@ -57,6 +57,7 @@ void draw() {
      bgm.stop();
     if( showLeaderboard){
      LeaderBoard();
+
    }
   }
 }

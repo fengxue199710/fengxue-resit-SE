@@ -24,7 +24,7 @@ void stoneCollisions(Sprite player, ArrayList<Sprite> stones) {
     ArrayList<Sprite> collisionList = checkCollisionList(player, stones);
     if (collisionList.size() > 0) {
         for (Sprite s : collisionList) {
-            teleportPlayer(player, new PVector(player.getCenter_x()+500, player.getCenter_y()));  // 传送到指定坐标
+            teleportPlayer(player, new PVector(player.getCenter_x()+600, player.getCenter_y()));  // 传送到指定坐标
             stones.remove(s);
             break;  // 处理一个就足够，防止重复处理
         }
