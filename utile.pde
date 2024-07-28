@@ -135,6 +135,34 @@ public void solveCollisions(Sprite player, ArrayList<Sprite> grounds) {
     }
   }
 }
+void displayTimer() {
+  // Container
+  pushMatrix();
+  stroke(#D4AF37);
+  strokeWeight(4);
+  fill(#D4AF37, 25);
+  rect(300 + view_x, 20 + view_y, 250, 80, 20);
+  popMatrix();
+  
+  // Timer
+  pushMatrix();
+  translate(view_x, view_y); // Apply view offset
+  textAlign(LEFT);
+  fill(#FFFFFF);
+  textSize(32);
+  
+  // 获取剩余时间
+  long remainingTime = player.getRemainingTeleportTime();
+  if (remainingTime > 0) {
+    String timerText = "Teleport in: " + (remainingTime / 1000) + "s";
+    text(timerText, 320, 70);  // 显示计时器
+  } else {
+    text(" teleport Timer", 320, 70);  // 显示准备就绪
+  }
+  
+  textAlign(CENTER);
+  popMatrix();
+}
 
 void displayheart() {
   // Container

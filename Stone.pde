@@ -41,7 +41,7 @@ void startTeleportBackTimer(Sprite player, int delay) {
             public void run() {
                 teleportPlayerBack(player);
             }
-        }, 
+        },
         delay
     );
 }
@@ -52,13 +52,14 @@ void teleportPlayer(Sprite player, PVector newPosition) {
         if (!p.isTeleported) {  // 只有未处于传送状态时才处理
             p.originalPosition = new PVector(p.getCenter_x(), p.getCenter_y());
             p.setCenter_x(newPosition.x);
-            p.setCenter_y(newPosition.y );
+            p.setCenter_y(newPosition.y);
             p.isTeleported = true;
             p.stoneCollisionCount++;  // 碰撞次数增加
 
             // 只在第一次碰撞时启动返回计时器
             if (p.stoneCollisionCount == 1) {
                 startTeleportBackTimer(p, 5000);
+                p.startTeleportTimer(5000);  // 启动计时器
             }
         }
     }

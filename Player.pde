@@ -8,6 +8,7 @@ public class Player extends AnimatedSprite {
     PVector originalPosition;  
     boolean isTeleported = false; 
     int stoneCollisionCount = 0;
+     long teleportEndTime = 0;  
     
     public Player (PImage img, int size_x, int size_y, float x, float y) {
         super(img, size_x,size_y,x,y);
@@ -24,6 +25,14 @@ public class Player extends AnimatedSprite {
         loadFrames(jump, "./data/Player/jump");
         originalPosition = new PVector(x, y); 
       
+    }
+    public void startTeleportTimer(long duration) {
+        this.teleportEndTime = millis() + duration;
+    }
+
+    public long getRemainingTeleportTime() {
+        long remainingTime = teleportEndTime - millis();
+        return remainingTime > 0 ? remainingTime : 0;
     }
  public void resetTeleport() {
         this.isTeleported = false;  // 用于重置传送状态

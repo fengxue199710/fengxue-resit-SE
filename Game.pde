@@ -37,27 +37,25 @@ void setup() {
 void draw() {
   if (!gameStarted) {
     drawPage();
-  }else if (created == false){
+  } else if (created == false) {
     gw.createMap();
     created = true;
-     //bgm loop
-      bgm.loop();
-  }
-  else  if (gw.isReady && !gameOver){
+    // bgm loop
+    bgm.loop();
+  } else if (gw.isReady && !gameOver) {
     background(sky);
     scroll();
     drawBackButton();
     displayAll();
+    displayTimer();  // 添加显示计时器的调用
     updateAll();
     collideAll();
-  }
-  else if (gameOver){
+  } else if (gameOver) {
     drawRestart();
-     //bgm stop
-     bgm.stop();
-    if( showLeaderboard){
-     LeaderBoard();
-
-   }
+    // bgm stop
+    bgm.stop();
+    if (showLeaderboard) {
+      LeaderBoard();
+    }
   }
 }
