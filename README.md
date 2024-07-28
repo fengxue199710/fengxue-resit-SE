@@ -17,26 +17,24 @@ Introduction (5%  ~200 words)
 Describe what makes the new level in your game novel.
 
 The previous game was a 2D platformer with two levels, easy and hard. Like other similar 2D platformers, it allowed the character to jump through obstacles, avoid enemies and collect points. I added a medium difficulty map based on the previous game and added a new feature: the teleport stone. When the player touches the teleport stone, they will be teleported to a specified location for a period of time before being teleported back to the starting point, or they will be teleported to a specified location but not teleported back. The specific function of the teleport stone depends on whether it is the first or second time the teleport stone is touched. The first time the teleport stone is touched, the player will be teleported to a specified location for a period of time before being teleported back to the starting point. The second time the teleport stone is touched, the player will be teleported to a specified location but will not teleport back. By introducing medium difficulty, players have the opportunity to practice and improve their skills before entering more difficult levels. The teleport stone in this level adds a new mechanic that players need to master to achieve a smooth transition from easy levels to difficult levels. With the teleport stone, players can enjoy a more interesting and varied game.
-//todo after pre 这里准备加演示功能的视频2个
+<br>
+<br>
 
+<p align="center">
+  <img src="data/Images/GameDemo1.gif"  alt="GameDemoStone1" style="width:60%; height:250px;">
+  <p align="center">GameDemoStone1 </p>
+</p>
+
+<p align="center">
+  <img src="data/Images/GameDemo2.gif" alt="GameDemoStone2" style="width:60%; height:250px;">
+ <p align="center">GameDemoStone2 </p>
+</p>
 
 <br>
-<p align="center">
-![CLASS DIAGRAM](data/Images/GameDemoStone1.mp4)
- <p align="center">Teleport stone firstly touch </p>
- 
- <br>
- 
-<p align="center">
-![CLASS DIAGRAM](data/Images/GameDemoStone1.mp4)
- <p align="center">Teleport stone secondly touch </p>
-
-
 
 <br>
 
 # Requirements
-//done before pre
 Requirements (15% ~300 words)
 List three new user stories associated with the new level. Explain why you decided to develop the new level.
 
@@ -88,7 +86,7 @@ In summary, mid-level levels with Teleport Stones were developed to create a mor
 
 
 # Design
-
+//todo behavioural diagrams.
 Design (15% ~350 words)
 Explain what has changed in the system architecture, as a result of developing the new level. Show the changes in the class diagrams and behavioural diagrams.
 
@@ -153,40 +151,40 @@ New Methods for Displaying and Updating Stones: Ensured proper display and anima
 These changes have enabled the new level to be implemented, introducing new challenges and interactions that enhance the depth and playability of the game.
 
 
-
-
 # Implementation
 
 //todo after pre
 Implementation (15% ~350 words)
 Describe implementation of the new level in your game, in particular highlighting  two areas of challengein developing this new level in your game.
 
+The implementation of the new level in our game involved several critical steps, especially focusing on the introduction of new game elements and the addition of complex interaction mechanics. Below are the descriptions of two major challenges faced during the development of this new level, along with their respective solutions.
   
 
 ### Challenge 1
 
 #### Introduction of New Game Elements and Animations
 
-Description: The new level introduced a new game element, the stone, which has animations that need to be dynamically displayed and updated in the game.
+-Description:
+<br>
+The new level introduced a new game element, the stone, which has animations that need to be dynamically displayed and updated in the game.
 
-#### Specific Issues:
-
+-Specific Issues:<br>
 Loading and managing animation frames for the stone to ensure smooth animation playback.
 Correctly displaying and updating the state of stones in the main game loop.
 
 ### Solution 1
 
-Solution:Create a Stone class inheriting from AnimatedSprite and load animation frames in its constructor.
+Solution:<br>Create a Stone class inheriting from AnimatedSprite and load animation frames in its constructor.
 In the displayStone method, iterate over all stone objects and call their display and update methods.
 
 ### Challenge 2
 
 #### Collision Handling and Teleportation Logic
 
-Description: In the new level, when the player collides with a stone, a teleportation logic is triggered. This means the player is teleported to a new position and then returns to the original position after a certain delay. Implementing this feature required precise collision detection and managing multiple states and timers.
+-Description: <br>
+In the new level, when the player collides with a stone, a teleportation logic is triggered. This means the player is teleported to a new position and then returns to the original position after a certain delay. Implementing this feature required precise collision detection and managing multiple states and timers.
 
-#### Specific Issues:
-
+-Specific Issues:<br>
 Ensuring accurate collision detection under various conditions.
 Managing multiple states (e.g., whether the player is teleported, original position, number of collisions).
 Accurately controlling the delay timer to teleport the player back to the original position, avoiding multiple teleportations or timing errors.
@@ -194,7 +192,7 @@ Accurately controlling the delay timer to teleport the player back to the origin
 
 ### Solution 2
 
-Solution:Use the checkCollisionList method to detect collisions and call the teleportPlayer method upon collision.
+Solution:<br>Use the checkCollisionList method to detect collisions and call the teleportPlayer method upon collision.
 Add relevant attributes (such as isTeleported and originalPosition) in the player class to manage teleportation state.
 Use java.util.Timer to handle the delay logic for returning to the original position.
 
@@ -205,7 +203,50 @@ Use java.util.Timer to handle the delay logic for returning to the original posi
 Evaluation (15% ~300 words)
 One qualitative or one quantitative evaluation of your choice.
 A description of how the new code was tested.
-### Testing of the new code
+
+## One qualitative or one quantitative evaluation
+
+Evaluation is fundamental in software development as it enables developers to analyze and refine the software to meet users’ requirements effectively. To ensure that this project meets users’ requirements, I chose to conduct a qualitative evaluation using the Think Aloud method.
+
+### Think Aloud Evaluation
+The Think Aloud method requires users to verbalize their thoughts and impressions while performing specified tasks. This approach provides direct insights into the user experience, highlighting potential issues and areas for improvement.
+
+### Methodology:
+
+**-Participants:** I recruited four participants with varying levels of gaming experience to perform the Think Aloud evaluation.<br>
+
+**-Tasks:** Participants were asked to play the new level, focusing particularly on collecting pumpkins and navigating through the level.<br>
+
+**-Procedure:** During gameplay, participants were instructed to verbalize their thoughts, describe their actions, and express any confusion or difficulties they encountered. A facilitator was present to prompt participants if they became silent, ensuring continuous verbal feedback.<br>
+
+### Data Collection and Categorization:<br>
+
+**-Raw Data:** <br>The verbal feedback from participants was recorded and transcribed.<br>
+**-Categorization:** The transcribed data was then categorized into four main categories: “Nothing to be addressed,” “Issues to be addressed,” “Issues to be discussed,” and “Uncertain.”<br>
+**-Nothing to be addressed:** Feedback indicating positive aspects or areas with no issues.<br>
+**-Issues to be addressed:** Clear issues or bugs that need immediate attention and fixing.<br>
+**-Issues to be discussed:** Ambiguous feedback that could either be a bug or an intended feature, requiring further discussion among the development team.<br>
+**-Uncertain:** Feedback that was unclear or not directly actionable.<br>
+
+### Results: <br>
+**-Positive Feedback:** <br>Participants appreciated the new animations and the teleportation mechanics, noting that these elements added depth and excitement to the gameplay.<br>
+**-Issues Identified:** <br>
+Collision Detection: Some participants reported inconsistent collision detection with the stones, leading to unexpected teleportations.<br>
+Difficulty Balance: A few participants found the level either too easy or too difficult, indicating a need to reassess the difficulty settings.<br>
+Teleportation Timing: Some participants were unsure when they would be teleported back to the original position, suggesting the need for a teleportation timer.<br>
+Visual Clarity: <br>There were comments about certain visual elements being unclear or hard to distinguish, affecting the overall user experience.<br>
+
+### Improvements: <br>
+
+Based on the Think Aloud evaluation, we made several adjustments:<br>
+- Refined the collision detection algorithm to ensure consistent interactions with the stones.<br>
+- Adjusted the difficulty settings to provide a more balanced experience for players of different skill levels.<br>
+- Enhanced the visual clarity of key elements to improve the overall user experience.<br>
+- Added a teleportation timer to clearly indicate when the player would be teleported back, improving user awareness and reducing confusion.<br>
+
+By incorporating feedback from the Think Aloud evaluation, we were able to identify and address critical issues, leading to a more polished and user-friendly game.<br>
+
+## Testing of the new code
 
 To ensure the functionality and stability of the new code, I performed the following tests:
 
@@ -232,7 +273,7 @@ Through the above evaluation and testing, the smooth integration of the new leve
 
 
 
-### Think Aloud (Raw) ###
+
 
 # Process
 
@@ -241,6 +282,7 @@ Process (15% ~200 words)
 Reflect on your work process, in particular:
 explaining what tools you used and their strengths and limitations
 
+agile sprint kanban board paperprototying  giphy
 <br> 
 
 //todo after pre
