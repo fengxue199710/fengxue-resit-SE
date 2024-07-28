@@ -22,9 +22,17 @@ The previous game was a 2D platformer with two levels, easy and hard. Like other
 
 <br>
 <p align="center">
- <img src="https://github.com/UoB-COMSM0110/2024-group-12/assets/104866923/aef13f50-98de-417a-aa9f-402e4b209f9c" alt="Enemies Chase Mechanics" style="width:100%; height:350px;">
- <p align="center">Teleport stone first touch </p>
-</p>
+![CLASS DIAGRAM](data/Images/GameDemoStone1.mp4)
+ <p align="center">Teleport stone firstly touch </p>
+ 
+ <br>
+ 
+<p align="center">
+![CLASS DIAGRAM](data/Images/GameDemoStone1.mp4)
+ <p align="center">Teleport stone secondly touch </p>
+
+
+
 <br>
 
 # Requirements
@@ -80,11 +88,15 @@ In summary, mid-level levels with Teleport Stones were developed to create a mor
 
 
 # Design
-//todo before pre
+
 Design (15% ~350 words)
 Explain what has changed in the system architecture, as a result of developing the new level. Show the changes in the class diagrams and behavioural diagrams.
 
+**Paper Prototyping**
 
+<p align="center">
+![CLASS DIAGRAM](data/Images/GameDemoStone1.mp4)
+ <p align="center">Teleport stone firstly touch </p>
 **System Architecture**
 
 
@@ -94,9 +106,51 @@ Explain what has changed in the system architecture, as a result of developing t
 
 // 加入 behavioural diagrams.
 
-**Changesas**
+**Changes**
 
 as a result of developing the new level：//todo
+To develop the new level, the system architecture has undergone the following changes:
+
+*New Class：*
+
+Stone Class:
+Inherits from AnimatedSprite and represents stones in the new level.
+Added constructor: Initializes stone objects and loads their animation frames.
+Added updateAnimation method: Updates the animation frames of the stone.
+Modified and New Methods
+
+*New Methods：*
+
+displayStone: Displays stones on the screen and updates their animation frames.
+stoneCollisions: Detects collisions between the player and stones, and teleports the player upon collision.
+startTeleportBackTimer: Starts a timer to teleport the player back to the original position after a specified delay.
+teleportPlayer: Teleports the player to a new specified position and starts the return timer.
+teleportPlayerBack: Teleports the player back to the original position.
+
+*Modified Existing Classes：*
+
+Player Class:
+Added attribute originalPosition: Stores the player's original position.
+Added attribute isTeleported: Indicates whether the player has been teleported.
+Added attribute stoneCollisionCount: Tracks the number of collisions between the player and stones.
+Added attribute teleportEndTime: Records the end time of the teleport.
+Added methods startTeleportTimer and getRemainingTeleportTime: Manages the teleport timing.
+New Global Variables
+In the Main Class:
+ArrayList<Sprite> Stones: Stores all stone objects.
+
+*New Game Logic：*
+
+Calling displayStone in the draw Method: Ensures that stone objects are displayed and updated in the main drawing loop.
+Calling stoneCollisions in the collideAll Method: Adds handling of collisions between the player and stones in the collision detection logic.
+
+**Summary of System Architecture Changes**
+
+New Stone Class: Introduced a new game element (stone) and created a dedicated class to handle its behavior and animation.
+New Collision Handling Logic: Added logic to teleport the player when colliding with stones and return the player to the original position after a certain time.
+Extended Player Class: Added attributes and methods related to teleportation to support the new game mechanic.
+New Methods for Displaying and Updating Stones: Ensured proper display and animation updates for stone objects in the game.
+These changes have enabled the new level to be implemented, introducing new challenges and interactions that enhance the depth and playability of the game.
 
 
 
@@ -110,7 +164,40 @@ Describe implementation of the new level in your game, in particular highlightin
   
 
 ### Challenge 1
+
+#### Introduction of New Game Elements and Animations
+
+Description: The new level introduced a new game element, the stone, which has animations that need to be dynamically displayed and updated in the game.
+
+#### Specific Issues:
+
+Loading and managing animation frames for the stone to ensure smooth animation playback.
+Correctly displaying and updating the state of stones in the main game loop.
+
 ### Solution 1
+
+Solution:Create a Stone class inheriting from AnimatedSprite and load animation frames in its constructor.
+In the displayStone method, iterate over all stone objects and call their display and update methods.
+
+### Challenge 2
+
+#### Collision Handling and Teleportation Logic
+
+Description: In the new level, when the player collides with a stone, a teleportation logic is triggered. This means the player is teleported to a new position and then returns to the original position after a certain delay. Implementing this feature required precise collision detection and managing multiple states and timers.
+
+#### Specific Issues:
+
+Ensuring accurate collision detection under various conditions.
+Managing multiple states (e.g., whether the player is teleported, original position, number of collisions).
+Accurately controlling the delay timer to teleport the player back to the original position, avoiding multiple teleportations or timing errors.
+
+
+### Solution 2
+
+Solution:Use the checkCollisionList method to detect collisions and call the teleportPlayer method upon collision.
+Add relevant attributes (such as isTeleported and originalPosition) in the player class to manage teleportation state.
+Use java.util.Timer to handle the delay logic for returning to the original position.
+
 
 # Evaluation
 
@@ -118,6 +205,30 @@ Describe implementation of the new level in your game, in particular highlightin
 Evaluation (15% ~300 words)
 One qualitative or one quantitative evaluation of your choice.
 A description of how the new code was tested.
+### Testing of the new code
+
+To ensure the functionality and stability of the new code, I performed the following tests:
+
+**Functional testing**
+<br>
+Purpose: Ensure that the new level and all its features work properly.
+Method: Manual testing includes the complete process of player collision with stones, teleportation logic, and returning to the original position. Automated testing uses simulated player input to verify game behavior.
+Result: All functional tests passed, confirming that the logic and interaction of the new level are as expected.
+
+**Regression testing**<br>
+Purpose: Ensure that the introduction of new code does not break existing functionality.
+Method: Rerun all existing test cases after introducing the new level, especially those involving player movement, collision detection, and game state management.
+Result: All regression tests passed, confirming that the new code did not introduce new problems.
+
+**Performance testing**<br>
+Purpose: Verify the performance of the new level and ensure that the frame rate and memory usage are within a reasonable range.
+Method: Run the game for a long time, especially scenes with multiple animated stones and background music, and monitor the frame rate and memory usage.
+Result: The game performance remains stable after the introduction of the new level, and the frame rate and memory usage are as expected.
+
+<br>
+
+**Conclusion**<br>
+Through the above evaluation and testing, the smooth integration of the new level was ensured, and its impact on the overall game performance was verified to be within an acceptable range, providing players with a smooth and stable gaming experience.
 
 
 
