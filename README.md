@@ -210,11 +210,9 @@ Use java.util.Timer to handle the delay logic for returning to the original posi
 # Evaluation
 
 
-## One qualitative or one quantitative evaluation
-
 Evaluation is fundamental in software development as it enables developers to analyze and refine the software to meet users’ requirements effectively. To ensure that this project meets users’ requirements, I chose to conduct a qualitative evaluation using the Think Aloud method.
 
-### Think Aloud Evaluation
+## Think Aloud Evaluation
 The Think Aloud method requires users to verbalize their thoughts and impressions while performing specified tasks. This approach provides direct insights into the user experience, highlighting potential issues and areas for improvement.
 
 ### Methodology:
