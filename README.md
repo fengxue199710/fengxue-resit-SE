@@ -13,10 +13,17 @@
 - [Conclusion](#conclusion)
 
 # Introduction 
-Introduction (5%  ~200 words)
-Describe what makes the new level in your game novel.
 
-The previous game was a 2D platformer with two levels, easy and hard. Like other similar 2D platformers, it allowed the character to jump through obstacles, avoid enemies and collect points. I added a medium difficulty map based on the previous game and added a new feature: the teleport stone. When the player touches the teleport stone, they will be teleported to a specified location for a period of time before being teleported back to the starting point, or they will be teleported to a specified location but not teleported back. The specific function of the teleport stone depends on whether it is the first or second time the teleport stone is touched. The first time the teleport stone is touched, the player will be teleported to a specified location for a period of time before being teleported back to the starting point. The second time the teleport stone is touched, the player will be teleported to a specified location but will not teleport back. By introducing medium difficulty, players have the opportunity to practice and improve their skills before entering more difficult levels. The teleport stone in this level adds a new mechanic that players need to master to achieve a smooth transition from easy levels to difficult levels. With the teleport stone, players can enjoy a more interesting and varied game.
+The previous game was a 2D platformer with two levels, easy and hard. Like other similar 2D platformers, it allowed the character to jump through obstacles, avoid enemies and collect points. I added a medium difficulty map based on the previous game and added a new feature: **the teleport stone.** 
+<br>
+<br>
+*Description:* When the player touches the teleport stone, they will be teleported to a specified location for a period of time before being teleported back to the starting point, or they will be teleported to a specified location but not teleported back.
+<br>
+<br>
+*Indetail:* The specific function of the teleport stone depends on whether it is the first or second time the teleport stone is touched. The first time the teleport stone is touched, the player will be teleported to a specified location for a period of time before being teleported back to the starting point. The second time the teleport stone is touched, the player will be teleported to a specified location but will not teleport back.
+<br>
+<br>
+By introducing medium difficulty, players have the opportunity to practice and improve their skills before entering more difficult levels. The teleport stone in this level adds a new mechanic that players need to master to achieve a smooth transition from easy levels to difficult levels. With the teleport stone, players can enjoy a more interesting and varied game.
 <br>
 <br>
 
@@ -35,8 +42,6 @@ The previous game was a 2D platformer with two levels, easy and hard. Like other
 <br>
 
 # Requirements
-Requirements (15% ~300 words)
-List three new user stories associated with the new level. Explain why you decided to develop the new level.
 
 **User Case Story**
 
@@ -86,27 +91,36 @@ In summary, mid-level levels with Teleport Stones were developed to create a mor
 
 
 # Design
-//todo behavioural diagrams.
-Design (15% ~350 words)
-Explain what has changed in the system architecture, as a result of developing the new level. Show the changes in the class diagrams and behavioural diagrams.
+The design phase of the project was critical in laying a solid foundation for development. It involved conceptualizing the new game level, defining its mechanics, and ensuring that the new features integrated seamlessly with the existing game structure.
+<br>
+<br>
 
-**Paper Prototyping**
+## Paper Prototyping
+
+Paper prototyping played a significant role in the initial design process. By sketching out the game levels and the new teleport stone mechanic on paper, I was able to quickly iterate on ideas and gather feedback. This low-fidelity approach allowed for rapid visualization of concepts and early identification of potential design issues. The simplicity of paper prototyping made it an effective tool for brainstorming and refining the overall structure and flow of the new level.
+<br>
+The ability to easily adjust and experiment with different designs on paper ensured that the final implementation was well thought out and aligned with the intended gameplay experience.
+<br>
+<p align="center">
+  <img src="data/Images/paperprototyping1.gif"  alt="paperprototypingStone1" style="width:60%; height:250px;">
+  <p align="center">paperprototyingStone1 </p>
+</p>
 
 <p align="center">
-![CLASS DIAGRAM](data/Images/GameDemoStone1.mp4)
- <p align="center">Teleport stone firstly touch </p>
-**System Architecture**
+  <img src="data/Images/paperprototying2.gif"  alt="paperprototypingStone2" style="width:60%; height:250px;">
+  <p align="center">paperprototyingStone2 </p>
+</p>
+<br>
+<br>
 
+## System Architecture
 
 **CLASS DIAGRAM**
 
 ![CLASS DIAGRAM](data/Images/classdiagram.png)
 
-// 加入 behavioural diagrams.
-
 **Changes**
 
-as a result of developing the new level：//todo
 To develop the new level, the system architecture has undergone the following changes:
 
 *New Class：*
@@ -144,18 +158,14 @@ Calling stoneCollisions in the collideAll Method: Adds handling of collisions be
 
 **Summary of System Architecture Changes**
 
-New Stone Class: Introduced a new game element (stone) and created a dedicated class to handle its behavior and animation.
+*New Stone Class:* Introduced a new game element (stone) and created a dedicated class to handle its behavior and animation.
 New Collision Handling Logic: Added logic to teleport the player when colliding with stones and return the player to the original position after a certain time.
-Extended Player Class: Added attributes and methods related to teleportation to support the new game mechanic.
+*Extended Player Class:* Added attributes and methods related to teleportation to support the new game mechanic.
 New Methods for Displaying and Updating Stones: Ensured proper display and animation updates for stone objects in the game.
 These changes have enabled the new level to be implemented, introducing new challenges and interactions that enhance the depth and playability of the game.
 
 
 # Implementation
-
-//todo after pre
-Implementation (15% ~350 words)
-Describe implementation of the new level in your game, in particular highlighting  two areas of challengein developing this new level in your game.
 
 The implementation of the new level in our game involved several critical steps, especially focusing on the introduction of new game elements and the addition of complex interaction mechanics. Below are the descriptions of two major challenges faced during the development of this new level, along with their respective solutions.
   
@@ -199,10 +209,6 @@ Use java.util.Timer to handle the delay logic for returning to the original posi
 
 # Evaluation
 
-//todo after pre
-Evaluation (15% ~300 words)
-One qualitative or one quantitative evaluation of your choice.
-A description of how the new code was tested.
 
 ## One qualitative or one quantitative evaluation
 
@@ -276,25 +282,61 @@ Through the above evaluation and testing, the smooth integration of the new leve
 
 
 # Process
-
-//todo before pre
-Process (15% ~200 words)
-Reflect on your work process, in particular:
-explaining what tools you used and their strengths and limitations
-
-agile sprint kanban board paperprototying  giphy
-<br> 
-
-//todo after pre
-how different it would have been working in a team rather than working on your own? 
-how you could have improved your performance in the previous team work. 
+Reflecting on my work process, I realized the importance of using a structured approach to manage the development of the new game level. By leveraging various tools and methodologies, I was able to maintain organization and efficiency throughout the project. Below, I discuss the tools I used, their strengths, and their limitations. Additionally, I compare working in a team versus working alone, and suggest improvements for better team performance based on past experiences.
+## Tools Used
+### Agile Methodology:
+*Strengths:* Agile provided a flexible framework that allowed for iterative development and continuous feedback. This adaptability was crucial for making adjustments based on user feedback and new ideas.
+<br>
+*Limitations:* Agile requires constant communication and regular updates, which can be challenging to maintain when working alone.
+### Sprint Planning:
+*Strengths:* Sprint planning helped break down the project into manageable tasks and set clear goals for each development cycle. This approach kept the project organized and on track.
+<br>
+*Limitations:* Estimating time for tasks can be tricky, especially when unexpected issues arise, potentially disrupting the planned sprint.
+### Kanban Board:
+*Strengths:* The Kanban board provided a visual representation of tasks, their statuses, and progress. It was useful for tracking work and ensuring that nothing was overlooked.
+<br>
+*Limitations:* Maintaining the board and updating task statuses can become time-consuming, and it relies heavily on discipline to keep it current.
+### Paper Prototyping:
+*Strengths:* Paper prototyping allowed for quick and easy visualization of ideas. It was an effective tool for brainstorming and initial design phases.
+<br>
+*Limitations:* Paper prototypes lack interactivity and can be limited in demonstrating complex interactions and animations.
+### Giphy and EZGIF:
+*Strengths:* These tools were useful for creating and editing animations and GIFs to demonstrate game features and mechanics.
+<br>
+*Limitations:* They offer limited customization and might not support all advanced editing features needed for complex animations.
+## Teamwork vs. Solo Work
+### Working in a Team:
+*Strengths:* Collaborating with a team can bring diverse perspectives and skills, potentially leading to more innovative solutions. Tasks can be distributed based on individual strengths, increasing efficiency and productivity.
+<br>
+*Limitations:* Coordinating schedules and maintaining consistent communication can be challenging. There is also a potential for conflicts or differences in vision and approach.
+### Working Alone:
+*Strengths:* Working solo allows for complete control over the project and the ability to make quick decisions without the need for consensus. It also eliminates the need for constant coordination with others.
+<br>
+*Limitations:* The workload can be overwhelming, and the lack of feedback from team members can lead to missed opportunities for improvement. It can also be challenging to stay motivated and disciplined without the accountability of a team.
+## Improving Team Performance
+*In previous team work, performance could have been improved by:*
+<br>
+<br>
+**Enhanced Communication:** Regular and structured communication channels, such as daily stand-ups or weekly meetings, could have ensured everyone was on the same page and issues were addressed promptly.
+<br>
+**Clearer Role Definition:** Defining roles and responsibilities more clearly would have helped in preventing overlap and ensuring that each team member focused on their strengths.
+<br>
+**More Frequent Feedback:** Implementing more frequent feedback loops and reviews could have identified issues earlier and allowed for quicker course corrections.
+<br>
+**Better Use of Tools:** Utilizing collaboration tools more effectively, such as shared Kanban boards or project management software, would have streamlined task management and progress tracking.
 
 # Conclusion
-//todo after pre
-Conclusion (10% ~200 words)
-Describe what lessons you have learnt about software engineering by completing this individual work? 
-Reflect on the challenges you faced in completing this work. 
-Describe how you could develop the software further in the future.
+
+Completing this individual work has been an enlightening experience in software engineering, teaching me valuable lessons about project management, problem-solving, and the importance of iterative development. One of the key lessons I learned is the significance of planning and structuring a project from the outset. Using methodologies like Agile and tools like Kanban boards allowed me to break down the project into manageable tasks, which helped in maintaining a clear focus and tracking progress efficiently.
+<br>
+<br>
+Reflecting on the challenges faced, one of the most significant was handling the complexity of adding new game mechanics, such as the teleport stone. Ensuring smooth integration of new features without breaking existing functionality required careful planning, extensive testing, and iterative refinement. Debugging issues related to collision detection and timing further highlighted the importance of thorough testing and validation. Another challenge was maintaining motivation and discipline while working alone, which underscored the value of regular self-assessment and progress tracking.
+<br>
+<br>
+To develop the software further in the future, I would consider several enhancements. First, incorporating more advanced animations and visual effects would enhance the user experience. Second, expanding the level design to include more interactive elements and varied environments could increase engagement and replayability. Third, implementing a more sophisticated AI for in-game characters could add depth and complexity to the gameplay. Finally, enhancing the multiplayer functionality to allow cooperative or competitive play would broaden the game's appeal and provide a richer gaming experience.
+<br>
+<br>
+Overall, this project has reinforced the importance of adaptability, continuous learning, and the iterative nature of software development. The experience gained and lessons learned will undoubtedly contribute to my future endeavors in software engineering.
 
 
 
